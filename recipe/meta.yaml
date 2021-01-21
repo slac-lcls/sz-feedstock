@@ -1,0 +1,48 @@
+{% set name = "sz" %}
+{% set version = "v2.1.11.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/szcompressor/SZ/archive/{{ version }}.tar.gz
+  sha256: e6fa5c969b012782b1e5e9fbd1cd7d1c0ace908d9ec982e78b2910ec5c2161ac 
+
+build:
+  skip: True  # [win or osx]
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - cmake
+    - make
+    - pkg-config
+  host:
+    - zlib
+    - zstd
+  run:
+    - zlib
+    - zstd
+
+about:
+  home: https://robertu94.github.io/libpressio
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: copyright-and-BSD-license.txt
+  summary: 'SZ: Error-bounded lossy Compressor for HPC data'
+  description: |
+     new error-controlled lossy compression algorithm for large-scale
+     scientific data, based on pointwise error bounds as opposed to
+     absolute error bounds. Significantly improves the prediction hitting
+     rate (or prediction accuracy) for each data point while greatly
+     reducing data size.
+  doc_url: https://github.com/szcompressor/SZ
+  dev_url: https://github.com/szcompressor/SZ
+
+extra:
+  recipe-maintainers:
+    - valmar
+    - chrisvam
