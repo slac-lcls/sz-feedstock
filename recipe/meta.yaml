@@ -5,13 +5,13 @@ package:
   name: {{ name|lower }}
   version: {{ version }}
 
-source:
-  url: https://github.com/szcompressor/{{ name|upper }}/archive/{{ version }}.tar.gz
+source
+  url: https://github.com/szcompressor/{{ name|upper }}/releases/download/2.1.11.2/SZ-2.1.11.2.tar.gz
   sha256: e4f8ad8f4cb232b7bc20cd2924a2a338495119123c21018b91af9e1ffe3fb94d 
 
 build:
   skip: True  # [win or osx]
-  number: 1
+  number: 2
 
 requirements:
   build:
