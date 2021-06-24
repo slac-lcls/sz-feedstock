@@ -1,5 +1,5 @@
 {% set name = "sz" %}
-{% set version = "v2.1.11.1" %}
+{% set version = "v2.1.11.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/szcompressor/SZ/archive/{{ version }}.tar.gz
-  sha256: e6fa5c969b012782b1e5e9fbd1cd7d1c0ace908d9ec982e78b2910ec5c2161ac 
+  sha256: e4f8ad8f4cb232b7bc20cd2924a2a338495119123c21018b91af9e1ffe3fb94d 
 
 build:
   skip: True  # [win or osx]
-  number: 14
+  number: 0
 
 requirements:
   build:
