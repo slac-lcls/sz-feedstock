@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/szcompressor/SZ/archive/{{ version }}.tar.gz
+  url: https://github.com/szcompressor/{{ name|uppder }}/archive/{{ version }}.tar.gz
   sha256: e4f8ad8f4cb232b7bc20cd2924a2a338495119123c21018b91af9e1ffe3fb94d 
 
 build:
   skip: True  # [win or osx]
-  number: 0
+  number: 1
 
 requirements:
   build:
